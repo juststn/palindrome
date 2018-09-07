@@ -1,19 +1,25 @@
 #include <iostream>
-
 using namespace std;
 
 int main(){
   char str[80];
   char str2[80];
-  int b =0;  
+  int b =0;
+  int size = 0;
   cin >> str;
   int count=0;
   // for loop execution
-  for( int a = 0; a < 80; a = a + 1 ) {
-				   if(str[a]>='0'&&str[a]<='9'||str[a]>='a' && a<='z'){
-				     for (int a; a<80; a=a+1){
-				       int size =  ; 
-				       b=size-a;
+  for(int c = 0; c < 80; c = c+1){
+    if(str[c]>'0'&&str[c]<='9'||str[c]>='a'&&str[c]<='z'){
+      size++;
+      cout<<"size of str is "<<size<<endl;
+    }
+  }
+  for( int a = 0; a < size-1; a = a + 1 ) {
+				   if(str[a]>='0'&&str[a]<='9'||str[a]>='a' && str[a]<='z'){
+				     for (int a; a<size-1; a=a+1){
+			       
+				       b=size-3-a;
 				       
 				       cout<< b<<a<<endl;
 				       str2[b]=str[a];
@@ -25,7 +31,7 @@ int main(){
 				   }
   }
 
-  for(int i = 0; i<80; i=i+1){
+  for(int i = 0; i<size-1; i=i+1){
     cout<<i<<endl;
     cout<<str2[i]<<endl;
     cout<<str[i]<<endl;
@@ -36,10 +42,10 @@ int main(){
   }
 
     if(count==0){
-      cout << "HONEY DETECTED" << endl;
+      cout << "palindrome" << endl;
     }
     else{
-      cout << "no pollen" << endl;
+      cout << "not pal" << endl;
       
     }
 
